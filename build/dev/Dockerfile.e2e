@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Build
-FROM golang:1.21.0
+FROM golang:1.23.3
 
 WORKDIR /go/src/app
 
@@ -10,6 +10,6 @@ RUN go mod download
 
 COPY . .
 
-RUN go install github.com/cosmtrek/air@latest
+RUN go install github.com/air-verse/air@latest
 
 CMD ["air", "-c", "./build/dev/.air.e2e.toml"]

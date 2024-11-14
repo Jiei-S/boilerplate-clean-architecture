@@ -34,7 +34,7 @@ func (h *UserHandler) AddUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	h.HandleOK(w, FromDTO(result))
+	h.HandleOK(w, ToResponse(result))
 }
 
 func (h *UserHandler) FindUser(w http.ResponseWriter, r *http.Request, id string) {
@@ -44,7 +44,7 @@ func (h *UserHandler) FindUser(w http.ResponseWriter, r *http.Request, id string
 		return
 	}
 
-	h.HandleOK(w, FromDTO(result))
+	h.HandleOK(w, ToResponse(result))
 }
 
 func (h *UserHandler) Health(w http.ResponseWriter, r *http.Request) {

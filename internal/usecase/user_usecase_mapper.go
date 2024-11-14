@@ -19,7 +19,7 @@ func (u *User) ToEntity() *entity.User {
 	}
 }
 
-func FromEntity(
+func ToDTO(
 	entity *entity.User,
 ) *User {
 	return &User{

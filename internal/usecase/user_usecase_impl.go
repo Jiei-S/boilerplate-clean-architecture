@@ -20,7 +20,7 @@ func (u *UserUsecaseImpl) AddUser(
 	if err != nil {
 		return nil, err
 	}
-	return FromEntity(entity), nil
+	return ToDTO(entity), nil
 }
 
 func (u *UserUsecaseImpl) FindUser(
@@ -31,7 +31,7 @@ func (u *UserUsecaseImpl) FindUser(
 	if err != nil {
 		return nil, err
 	}
-	return FromEntity(entity), nil
+	return ToDTO(entity), nil
 }
 
 func NewUserUsecase(

@@ -21,7 +21,7 @@ type UserRepositoryImpl struct {
 func (u *UserRepositoryImpl) Save(ctx context.Context, entity *entity.User) (*entity.User, *pkgErr.ApplicationError) {
 	tx := ctx.Value(TX_KEY).(*bun.Tx)
 
-	user := FromEntity(entity)
+	user := ToMapper(entity)
 	if _, err := tx.NewInsert().Model(user).Exec(ctx); err != nil {
 		return nil, RepositoryError(err)
 	}

@@ -43,7 +43,7 @@ func (u *User) ToEntity() *entity.User {
 	}
 }
 
-func FromEntity(
+func ToMapper(
 	entity *entity.User,
 ) *User {
 	return &User{

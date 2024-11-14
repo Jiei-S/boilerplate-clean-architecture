@@ -25,7 +25,7 @@ func ToDTO(
 	}, nil
 }
 
-func FromDTO(
+func ToResponse(
 	dto *usecase.User,
 ) *rest.User {
 	return &rest.User{
